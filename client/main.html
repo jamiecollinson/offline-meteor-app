@@ -1,0 +1,37 @@
+<head>
+  <title>offlinejobs</title>
+  <link rel="manifest" href="/app-manifest.json">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="ratchet.min.css" rel="stylesheet">
+</head>
+
+<body>
+  {{> hello}}
+</body>
+
+<template name="hello">
+  <header class="bar bar-nav">
+    <h1 class="title">Offline jobs test app - {{connectionStatus}}</h1>
+  </header>
+
+  <div class="content">
+    <div class="content-padded">
+      <p>There are {{counter}} jobs loaded.</p>
+    </div>
+
+    <ul class="table-view">
+      {{#each job in jobs}}
+        {{> jobItem job=job}}
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class="bar bar-standard bar-footer">
+    <button class="btn client-add">Add job directly</button>
+    <button class="btn server-add pull-right">Add job via server call</button>
+  </div>
+</template>
+
+<template name="jobItem">
+  <li class="table-view-cell">{{job.name}} <button class="btn btn-negative">Delete</button></li>
+</template>

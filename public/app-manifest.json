@@ -1,0 +1,5 @@
+{
+  "short_name": "Offline Meteor Test",
+  "name": "Offline Meteor Test App - GroundDB & appcache",
+  "display": "standalone"
+}
